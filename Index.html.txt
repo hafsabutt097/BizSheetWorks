@@ -1,0 +1,267 @@
+import React, { useState } from "react";
+import { Button } from "/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "/components/ui/card";
+import { Input } from "/components/ui/input";
+import { Textarea } from "/components/ui/textarea";
+import { Label } from "/components/ui/label";
+
+const BizSheetWorksWebsite = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // In a real implementation, this would send the contact form data
+    alert("Thank you for your message! We'll get back to you soon.");
+    setEmail("");
+    setMessage("");
+  };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Header */}
+      <header className="bg-primary text-primary-foreground py-6">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center">
+            <h1 className="text-2xl font-bold">BizSheetWorks</h1>
+            <nav className="hidden md:flex space-x-6">
+              <a href="#templates" className="hover:text-primary-foreground/80 transition-colors">Templates</a>
+              <a href="#about" className="hover:text-primary-foreground/80 transition-colors">About</a>
+              <a href="#contact" className="hover:text-primary-foreground/80 transition-colors">Contact</a>
+            </nav>
+            <Button variant="secondary" className="md:hidden">Menu</Button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Professional Business Templates</h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Streamline your business operations with expertly designed digital templates for finance, management, and entrepreneurship.
+          </p>
+          <Button size="lg" className="text-lg">
+            Explore Templates
+          </Button>
+        </div>
+      </section>
+
+      {/* Categories Section */}
+      <section id="templates" className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Template Categories</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Finance & Accounting */}
+            <Card className="text-center">
+              <CardHeader>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <img 
+                    src="https://placeholder-image-service.onrender.com/image/64x64?prompt=Finance%20spreadsheet%20icon%20with%20charts%20and%20graphs&id=finance-icon-001"
+                    alt="Finance spreadsheet icon with charts and calculator elements"
+                    className="w-10 h-10"
+                  />
+                </div>
+                <CardTitle>Finance & Accounting</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Budget trackers, expense reports, financial dashboards, and accounting templates to keep your finances organized.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            {/* Business Management */}
+            <Card className="text-center">
+              <CardHeader>
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <img 
+                    src="https://placeholder-image-service.onrender.com/image/64x64?prompt=Business%20management%20icon%20with%20gear%20and%20organization%20elements&id=management-icon-002"
+                    alt="Business management icon showing gears and organizational structure"
+                    className="w-10 h-10"
+                  />
+                </div>
+                <CardTitle>Business Management</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Project plans, team management tools, workflow organizers, and operational templates for efficient business management.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            {/* Freelancer Tools */}
+            <Card className="text-center">
+              <CardHeader>
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <img 
+                    src="https://placeholder-image-service.onrender.com/image/64x64?prompt=Freelancer%20tools%20icon%20with%20laptop%20and%20creative%20elements&id=freelancer-icon-003"
+                    alt="Freelancer tools icon featuring laptop and creative design elements"
+                    className="w-10 h-10"
+                  />
+                </div>
+                <CardTitle>Freelancer & Entrepreneur Tools</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Client management, proposal templates, invoice systems, and productivity tools designed for freelancers and entrepreneurs.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Templates */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Featured Templates</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Template 1 */}
+            <Card>
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Financial%20dashboard%20template%20with%20charts%20and%20metrics&id=template-finance-001"
+                alt="Professional financial dashboard template with charts and performance metrics"
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+              <CardHeader>
+                <CardTitle>Financial Dashboard Pro</CardTitle>
+                <CardDescription>Complete financial tracking system</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">View Template</Button>
+              </CardContent>
+            </Card>
+
+            {/* Template 2 */}
+            <Card>
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Project%20management%20template%20with%20timeline%20and%20tasks&id=template-management-002"
+                alt="Project management template showing Gantt chart and task organization"
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+              <CardHeader>
+                <CardTitle>Project Planner Suite</CardTitle>
+                <CardDescription>Comprehensive project management tool</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">View Template</Button>
+              </CardContent>
+            </Card>
+
+            {/* Template 3 */}
+            <Card>
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Freelancer%20invoice%20template%20with%20professional%20design&id=template-freelancer-003"
+                alt="Professional invoice template for freelancers with clean design and branding"
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+              <CardHeader>
+                <CardTitle>Freelancer Invoice System</CardTitle>
+                <CardDescription>Professional billing and invoicing</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">View Template</Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-8">About BizSheetWorks</h2>
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/300x300?prompt=Professional%20portrait%20of%20female%20business%20owner%20Hafsa%20Butt&id=owner-portrait-001"
+                alt="Professional portrait of Hafsa Butt, founder of BizSheetWorks"
+                className="w-48 h-48 rounded-full object-cover mx-auto md:mx-0"
+              />
+              <div className="text-left">
+                <h3 className="text-2xl font-semibold mb-4">Hafsa Butt, Founder</h3>
+                <p className="text-muted-foreground mb-4">
+                  With years of experience in business management and finance, I founded BizSheetWorks to help entrepreneurs 
+                  and businesses streamline their operations with professional, easy-to-use templates.
+                </p>
+                <p className="text-muted-foreground">
+                  Our templates are designed to save you time, reduce errors, and help you focus on growing your business 
+                  instead of dealing with administrative overhead.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-md mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">Get In Touch</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="How can we help you?"
+                  rows={5}
+                  required
+                />
+              </div>
+              <Button type="submit" className="w-full">
+                Send Message
+              </Button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-primary text-primary-foreground py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">BizSheetWorks</h3>
+              <p className="text-primary-foreground/80">
+                Professional digital templates for modern businesses and entrepreneurs.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2 text-primary-foreground/80">
+                <li><a href="#templates" className="hover:underline">Templates</a></li>
+                <li><a href="#about" className="hover:underline">About</a></li>
+                <li><a href="#contact" className="hover:underline">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+              <p className="text-primary-foreground/80">Email: hafsa@bizsheetworks.com</p>
+              <p className="text-primary-foreground/80">Phone: (555) 123-4567</p>
+            </div>
+          </div>
+          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/60">
+            <p>&copy; 2024 BizSheetWorks. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default BizSheetWorksWebsite;
